@@ -15,14 +15,4 @@ class CarCell: UITableViewCell
     @IBOutlet weak var labelBrand: UILabel!
     @IBOutlet weak var labelPrice: UILabel!
     @IBOutlet weak var buttonBuy: UIButton!
-    
-//    override func awakeFromNib()
-//    {
-//        super.awakeFromNib()
-//    }
-//    
-//    override func setSelected(_ selected: Bool, animated: Bool)
-//    {
-//        super.setSelected(selected, animated: animated)
-//    }
 }
