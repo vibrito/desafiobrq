@@ -7,21 +7,49 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD1FE9CA2082AA92007A083E /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE9C92082AA92007A083E /* Car.swift */; };
+		BD1FE9CD2082B443007A083E /* CarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE9CC2082B443007A083E /* CarService.swift */; };
+		BD1FE9CF2082B7F4007A083E /* CarListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE9CE2082B7F4007A083E /* CarListView.swift */; };
+		BD1FE9D12082BA1D007A083E /* CarListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE9D02082BA1D007A083E /* CarListPresenter.swift */; };
+		BD1FE9D420830B05007A083E /* CarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD1FE9D320830B05007A083E /* CarCell.xib */; };
+		BD1FE9D620830D21007A083E /* CarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE9D520830D21007A083E /* CarCell.swift */; };
+		BD1FE9D720831FA3007A083E /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD4C871620827EE800392A73 /* AlamofireImage.framework */; };
+		BD1FE9D920839DF0007A083E /* CarDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE9D820839DF0007A083E /* CarDetailsViewController.swift */; };
+		BD1FE9DB20839EE2007A083E /* CarDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE9DA20839EE2007A083E /* CarDetailsView.swift */; };
+		BD1FE9DD2083DBE7007A083E /* CarDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FE9DC2083DBE7007A083E /* CarDetailsPresenter.swift */; };
+		BD336D202082853D003021DC /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD4C871720827EE800392A73 /* Alamofire.framework */; };
+		BD336D21208286E5003021DC /* AlamofireObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD4C871820827EE800392A73 /* AlamofireObjectMapper.framework */; };
+		BD336D22208286E5003021DC /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD4C871520827EE800392A73 /* ObjectMapper.framework */; };
+		BD336D24208286E5003021DC /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD336D23208286E5003021DC /* SDWebImage.framework */; };
 		BD4C87032082602500392A73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4C87022082602500392A73 /* AppDelegate.swift */; };
-		BD4C87052082602500392A73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4C87042082602500392A73 /* ViewController.swift */; };
+		BD4C87052082602500392A73 /* CarListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4C87042082602500392A73 /* CarListViewController.swift */; };
 		BD4C87082082602500392A73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD4C87062082602500392A73 /* Main.storyboard */; };
 		BD4C870A2082602700392A73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD4C87092082602700392A73 /* Assets.xcassets */; };
 		BD4C870D2082602700392A73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD4C870B2082602700392A73 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BD1FE9C92082AA92007A083E /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		BD1FE9CC2082B443007A083E /* CarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarService.swift; sourceTree = "<group>"; };
+		BD1FE9CE2082B7F4007A083E /* CarListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CarListView.swift; path = DesafioBRQ/Model/CarListView.swift; sourceTree = SOURCE_ROOT; };
+		BD1FE9D02082BA1D007A083E /* CarListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListPresenter.swift; sourceTree = "<group>"; };
+		BD1FE9D320830B05007A083E /* CarCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarCell.xib; sourceTree = "<group>"; };
+		BD1FE9D520830D21007A083E /* CarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarCell.swift; sourceTree = "<group>"; };
+		BD1FE9D820839DF0007A083E /* CarDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CarDetailsViewController.swift; path = DesafioBRQ/View/CarDetailsViewController.swift; sourceTree = SOURCE_ROOT; };
+		BD1FE9DA20839EE2007A083E /* CarDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailsView.swift; sourceTree = "<group>"; };
+		BD1FE9DC2083DBE7007A083E /* CarDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailsPresenter.swift; sourceTree = "<group>"; };
+		BD336D23208286E5003021DC /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
 		BD4C86FF2082602500392A73 /* DesafioBRQ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesafioBRQ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD4C87022082602500392A73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BD4C87042082602500392A73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BD4C87042082602500392A73 /* CarListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListViewController.swift; sourceTree = "<group>"; };
 		BD4C87072082602500392A73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BD4C87092082602700392A73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD4C870C2082602700392A73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD4C870E2082602700392A73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD4C871520827EE800392A73 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
+		BD4C871620827EE800392A73 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
+		BD4C871720827EE800392A73 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		BD4C871820827EE800392A73 /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireObjectMapper.framework; path = Carthage/Build/iOS/AlamofireObjectMapper.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +57,68 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD1FE9D720831FA3007A083E /* AlamofireImage.framework in Frameworks */,
+				BD336D24208286E5003021DC /* SDWebImage.framework in Frameworks */,
+				BD336D21208286E5003021DC /* AlamofireObjectMapper.framework in Frameworks */,
+				BD336D22208286E5003021DC /* ObjectMapper.framework in Frameworks */,
+				BD336D202082853D003021DC /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BD1FE9C62082A9D5007A083E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BD1FE9C92082AA92007A083E /* Car.swift */,
+				BD1FE9CE2082B7F4007A083E /* CarListView.swift */,
+				BD1FE9DA20839EE2007A083E /* CarDetailsView.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BD1FE9C72082A9DD007A083E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BD4C87042082602500392A73 /* CarListViewController.swift */,
+				BD1FE9D820839DF0007A083E /* CarDetailsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BD1FE9C82082A9E5007A083E /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				BD1FE9D02082BA1D007A083E /* CarListPresenter.swift */,
+				BD1FE9DC2083DBE7007A083E /* CarDetailsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		BD1FE9CB2082B2BB007A083E /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				BD1FE9CC2082B443007A083E /* CarService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		BD1FE9D220830ADD007A083E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				BD1FE9D320830B05007A083E /* CarCell.xib */,
+				BD1FE9D520830D21007A083E /* CarCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		BD4C86F62082602500392A73 = {
 			isa = PBXGroup;
 			children = (
 				BD4C87012082602500392A73 /* DesafioBRQ */,
 				BD4C87002082602500392A73 /* Products */,
+				BD4C871420827EE700392A73 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +133,30 @@
 		BD4C87012082602500392A73 /* DesafioBRQ */ = {
 			isa = PBXGroup;
 			children = (
+				BD1FE9D220830ADD007A083E /* Cells */,
+				BD1FE9CB2082B2BB007A083E /* Service */,
+				BD1FE9C62082A9D5007A083E /* Model */,
+				BD1FE9C72082A9DD007A083E /* View */,
+				BD1FE9C82082A9E5007A083E /* Presenter */,
 				BD4C87022082602500392A73 /* AppDelegate.swift */,
-				BD4C87042082602500392A73 /* ViewController.swift */,
 				BD4C87062082602500392A73 /* Main.storyboard */,
 				BD4C87092082602700392A73 /* Assets.xcassets */,
 				BD4C870B2082602700392A73 /* LaunchScreen.storyboard */,
 				BD4C870E2082602700392A73 /* Info.plist */,
 			);
 			path = DesafioBRQ;
+			sourceTree = "<group>";
+		};
+		BD4C871420827EE700392A73 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BD336D23208286E5003021DC /* SDWebImage.framework */,
+				BD4C871720827EE800392A73 /* Alamofire.framework */,
+				BD4C871620827EE800392A73 /* AlamofireImage.framework */,
+				BD4C871820827EE800392A73 /* AlamofireObjectMapper.framework */,
+				BD4C871520827EE800392A73 /* ObjectMapper.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,6 +169,7 @@
 				BD4C86FB2082602500392A73 /* Sources */,
 				BD4C86FC2082602500392A73 /* Frameworks */,
 				BD4C86FD2082602500392A73 /* Resources */,
+				BD4C871E20827FD700392A73 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -122,6 +218,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD1FE9D420830B05007A083E /* CarCell.xib in Resources */,
 				BD4C870D2082602700392A73 /* LaunchScreen.storyboard in Resources */,
 				BD4C870A2082602700392A73 /* Assets.xcassets in Resources */,
 				BD4C87082082602500392A73 /* Main.storyboard in Resources */,
@@ -130,13 +227,47 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		BD4C871E20827FD700392A73 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/AlamofireObjectMapper.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SDWebImage.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ObjectMapper.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/AlamofireImage.framework",
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework",
+				"$(DERIVED_FILE_DIR)/$(FRAMEWORKS_FOLDER_PATH)/AlamofireObjectMapper.framework",
+				"$(DERIVED_FILE_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SDWebImage.framework",
+				"$(DERIVED_FILE_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ObjectMapper.framework",
+				"$(DERIVED_FILE_DIR)/$(FRAMEWORKS_FOLDER_PATH)/AlamofireImage.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BD4C86FB2082602500392A73 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD4C87052082602500392A73 /* ViewController.swift in Sources */,
+				BD1FE9D920839DF0007A083E /* CarDetailsViewController.swift in Sources */,
+				BD4C87052082602500392A73 /* CarListViewController.swift in Sources */,
+				BD1FE9DD2083DBE7007A083E /* CarDetailsPresenter.swift in Sources */,
 				BD4C87032082602500392A73 /* AppDelegate.swift in Sources */,
+				BD1FE9CF2082B7F4007A083E /* CarListView.swift in Sources */,
+				BD1FE9CD2082B443007A083E /* CarService.swift in Sources */,
+				BD1FE9CA2082AA92007A083E /* Car.swift in Sources */,
+				BD1FE9D620830D21007A083E /* CarCell.swift in Sources */,
+				BD1FE9DB20839EE2007A083E /* CarDetailsView.swift in Sources */,
+				BD1FE9D12082BA1D007A083E /* CarListPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,7 +413,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R4L6C6JGYH;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = DesafioBRQ/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -300,7 +436,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R4L6C6JGYH;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = DesafioBRQ/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
