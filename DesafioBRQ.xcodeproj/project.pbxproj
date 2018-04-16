@@ -26,6 +26,9 @@
 		BD4C87082082602500392A73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD4C87062082602500392A73 /* Main.storyboard */; };
 		BD4C870A2082602700392A73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD4C87092082602700392A73 /* Assets.xcassets */; };
 		BD4C870D2082602700392A73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD4C870B2082602700392A73 /* LaunchScreen.storyboard */; };
+		BDA72C87208466E200EAA8E9 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA72C86208466E200EAA8E9 /* CartView.swift */; };
+		BDA72C892084676D00EAA8E9 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA72C882084676D00EAA8E9 /* CartViewController.swift */; };
+		BDA72C8B208467C800EAA8E9 /* CartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA72C8A208467C800EAA8E9 /* CartPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +53,9 @@
 		BD4C871620827EE800392A73 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
 		BD4C871720827EE800392A73 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		BD4C871820827EE800392A73 /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireObjectMapper.framework; path = Carthage/Build/iOS/AlamofireObjectMapper.framework; sourceTree = "<group>"; };
+		BDA72C86208466E200EAA8E9 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
+		BDA72C882084676D00EAA8E9 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		BDA72C8A208467C800EAA8E9 /* CartPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +80,7 @@
 				BD1FE9C92082AA92007A083E /* Car.swift */,
 				BD1FE9CE2082B7F4007A083E /* CarListView.swift */,
 				BD1FE9DA20839EE2007A083E /* CarDetailsView.swift */,
+				BDA72C86208466E200EAA8E9 /* CartView.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -83,6 +90,7 @@
 			children = (
 				BD4C87042082602500392A73 /* CarListViewController.swift */,
 				BD1FE9D820839DF0007A083E /* CarDetailsViewController.swift */,
+				BDA72C882084676D00EAA8E9 /* CartViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -92,6 +100,7 @@
 			children = (
 				BD1FE9D02082BA1D007A083E /* CarListPresenter.swift */,
 				BD1FE9DC2083DBE7007A083E /* CarDetailsPresenter.swift */,
+				BDA72C8A208467C800EAA8E9 /* CartPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -262,8 +271,11 @@
 				BD4C87052082602500392A73 /* CarListViewController.swift in Sources */,
 				BD1FE9DD2083DBE7007A083E /* CarDetailsPresenter.swift in Sources */,
 				BD4C87032082602500392A73 /* AppDelegate.swift in Sources */,
+				BDA72C8B208467C800EAA8E9 /* CartPresenter.swift in Sources */,
+				BDA72C892084676D00EAA8E9 /* CartViewController.swift in Sources */,
 				BD1FE9CF2082B7F4007A083E /* CarListView.swift in Sources */,
 				BD1FE9CD2082B443007A083E /* CarService.swift in Sources */,
+				BDA72C87208466E200EAA8E9 /* CartView.swift in Sources */,
 				BD1FE9CA2082AA92007A083E /* Car.swift in Sources */,
 				BD1FE9D620830D21007A083E /* CarCell.swift in Sources */,
 				BD1FE9DB20839EE2007A083E /* CarDetailsView.swift in Sources */,

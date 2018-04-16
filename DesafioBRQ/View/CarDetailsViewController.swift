@@ -13,10 +13,15 @@ class CarDetailsViewController: UIViewController
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var scrollCar: UIScrollView!
     @IBOutlet weak var viewContainer: UIView!
-    @IBOutlet weak var labelTitle: UILabel!
+    @IBOutlet weak var imageViewCar: UIImageView!
+    @IBOutlet weak var labelDescription: UILabel!
+    @IBOutlet weak var labelBrand: UILabel!
+    @IBOutlet weak var labelPrice: UILabel!
+    @IBOutlet weak var buttonAdd: UIButton!
     
     var car: Car?
     var carId: Int?
+    var arrayCars: [Car] = []
     
     private let carDetailsPresenter = CarDetailsPresenter(carService: CarService())
     
@@ -26,6 +31,17 @@ class CarDetailsViewController: UIViewController
         
         carDetailsPresenter.attachView(view: self)
         carDetailsPresenter.getCar(id: carId!)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if  (segue.identifier == "segueCart")
+        {
+            let vc = segue.destination as! CartViewController
+            
+            //TODO: Apagar esse array, será salvo localmente
+            vc.arrayCars = arrayCars
+        }
     }
 }
 
@@ -50,7 +66,16 @@ extension CarDetailsViewController: CarDetaislView
     func setCar(car: Car)
     {
         self.car = car
-        labelTitle.text = car.nome
+        self.title = car.nome
+        labelDescription.text = car.descricao
+        let url = URL(string: car.imagem!)!
+        let placeholderImage = UIImage(named: "Placeholder")!
+        imageViewCar.af_setImage(withURL: url, placeholderImage: placeholderImage)
+        
+        labelBrand.text = "Fabricante: \(car.marca!)"
+        let doubleStr = String(format: "%.2f", car.preco ?? 0)
+        labelPrice.text = "R$ \(doubleStr)"
+        
         self.viewContainer.isHidden = false
     }
 }

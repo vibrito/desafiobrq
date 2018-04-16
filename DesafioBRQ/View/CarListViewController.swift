@@ -31,11 +31,22 @@ class CarListViewController: UIViewController
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
-        if let indexPath = sender as? IndexPath
+        if  (segue.identifier == "segueDetails")
         {
-            let vc = segue.destination as! CarDetailsViewController
-            let car = arrayCars[indexPath.row]
-            vc.carId = car.id
+            if let indexPath = sender as? IndexPath
+            {
+                let vc = segue.destination as! CarDetailsViewController
+                let car = arrayCars[indexPath.row]
+                vc.arrayCars = arrayCars
+                vc.carId = car.id
+            }
+        }
+        else if  (segue.identifier == "segueCart")
+        {
+            let vc = segue.destination as! CartViewController
+            
+            //TODO: Apagar esse array, será salvo localmente
+            vc.arrayCars = arrayCars
         }
     }
 }
