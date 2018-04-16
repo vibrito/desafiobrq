@@ -58,5 +58,12 @@ class CarDetailsPresenter
         print("name of car: \(item.name)")
         
         DBManager.sharedInstance.addItem(object: item)
+        
+        getBadgeNumber()
+    }
+    
+    func getBadgeNumber()
+    {
+        self.carDetailsView?.setBadge(badgeNumber: String(DBManager.sharedInstance.getCartItens().count))
     }
 }

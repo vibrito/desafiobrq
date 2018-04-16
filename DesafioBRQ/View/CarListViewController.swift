@@ -15,6 +15,7 @@ class CarListViewController: UIViewController
 {
     @IBOutlet weak var tableViewCar: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    var barButtonCart: BadgeBarButtonItem!
     
     var arrayCars: [Car] = []
     
@@ -24,9 +25,18 @@ class CarListViewController: UIViewController
     {
         super.viewDidLoad()
         
+        barButtonCart = BadgeBarButtonItem(image: "Cart", target: self, action: #selector(callCart))!
+        navigationItem.rightBarButtonItem = barButtonCart
+        
         tableViewCar.register(UINib(nibName: "CarCell", bundle: nil), forCellReuseIdentifier: "mainCell")
         carListPresenter.attachView(view: self)
         carListPresenter.getCars()
+    }
+    
+    override func viewDidAppear(_ animated: Bool)
+    {
+        super.viewDidAppear(animated)
+        carListPresenter.getBadgeNumber()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
@@ -46,6 +56,11 @@ class CarListViewController: UIViewController
     {
         let index = (sender as AnyObject).tag!
         carListPresenter.addToCart(car: arrayCars[index])
+    }
+    
+    @objc func callCart()
+    {
+        performSegue(withIdentifier: "segueCart", sender: nil)
     }
 }
 
@@ -73,6 +88,11 @@ extension CarListViewController: CarListView
         arrayCars = cars
         self.tableViewCar.isHidden = false
         self.tableViewCar.reloadData()
+    }
+    
+    func setBadge(badgeNumber: String)
+    {
+        barButtonCart.badgeText = badgeNumber
     }
 }
 

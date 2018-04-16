@@ -33,6 +33,7 @@
 		D3BFD89F20852E3700775EF5 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3BFD89D20852E3700775EF5 /* RealmSwift.framework */; };
 		D3BFD8A12085313D00775EF5 /* CartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFD8A02085313D00775EF5 /* CartItem.swift */; };
 		D3BFD8A32085421A00775EF5 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFD8A22085421A00775EF5 /* DBManager.swift */; };
+		D3BFD8A620855A7500775EF5 /* BadgeBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFD8A520855A7500775EF5 /* BadgeBarButtonItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		D3BFD89D20852E3700775EF5 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		D3BFD8A02085313D00775EF5 /* CartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItem.swift; sourceTree = "<group>"; };
 		D3BFD8A22085421A00775EF5 /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
+		D3BFD8A520855A7500775EF5 /* BadgeBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeBarButtonItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 		BD4C87012082602500392A73 /* DesafioBRQ */ = {
 			isa = PBXGroup;
 			children = (
+				D3BFD8A420855A5000775EF5 /* Badge */,
 				BD1FE9D220830ADD007A083E /* Cells */,
 				BD1FE9CB2082B2BB007A083E /* Service */,
 				BD1FE9C62082A9D5007A083E /* Model */,
@@ -180,6 +183,14 @@
 				BD4C871520827EE800392A73 /* ObjectMapper.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D3BFD8A420855A5000775EF5 /* Badge */ = {
+			isa = PBXGroup;
+			children = (
+				D3BFD8A520855A7500775EF5 /* BadgeBarButtonItem.swift */,
+			);
+			path = Badge;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,6 +302,7 @@
 				BD4C87032082602500392A73 /* AppDelegate.swift in Sources */,
 				BDA72C8B208467C800EAA8E9 /* CartPresenter.swift in Sources */,
 				BDA72C892084676D00EAA8E9 /* CartViewController.swift in Sources */,
+				D3BFD8A620855A7500775EF5 /* BadgeBarButtonItem.swift in Sources */,
 				D3BFD8A12085313D00775EF5 /* CartItem.swift in Sources */,
 				BD1FE9CF2082B7F4007A083E /* CarListView.swift in Sources */,
 				BD1FE9CD2082B443007A083E /* CarService.swift in Sources */,

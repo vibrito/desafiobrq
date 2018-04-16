@@ -14,4 +14,5 @@ protocol CarListView: NSObjectProtocol
     func finishLoading()
     func showError()
     func setList(cars: [Car])
+    func setBadge(badgeNumber: String)
 }

@@ -19,7 +19,8 @@ class CarDetailsViewController: UIViewController
     @IBOutlet weak var labelBrand: UILabel!
     @IBOutlet weak var labelPrice: UILabel!
     @IBOutlet weak var buttonAdd: UIButton!
-    
+    var barButtonCart: BadgeBarButtonItem!
+
     var car: Car?
     var carId: Int?
     
@@ -31,11 +32,25 @@ class CarDetailsViewController: UIViewController
         
         carDetailsPresenter.attachView(view: self)
         carDetailsPresenter.getCar(id: carId!)
+        
+        barButtonCart = BadgeBarButtonItem(image: "Cart", target: self, action: #selector(callCart))!
+        navigationItem.rightBarButtonItem = barButtonCart
+    }
+    
+    override func viewDidAppear(_ animated: Bool)
+    {
+        super.viewDidAppear(animated)
+        carDetailsPresenter.getBadgeNumber()
     }
     
     @IBAction func addToCart(_ sender: Any)
     {
         carDetailsPresenter.addToCart(car: car!)
+    }
+    
+    @objc func callCart()
+    {
+        performSegue(withIdentifier: "segueCart", sender: nil)
     }
 }
 
@@ -71,5 +86,10 @@ extension CarDetailsViewController: CarDetaislView
         labelPrice.text = "R$ \(doubleStr)"
         
         self.viewContainer.isHidden = false
+    }
+    
+    func setBadge(badgeNumber: String)
+    {
+        barButtonCart.badgeText = badgeNumber
     }
 }

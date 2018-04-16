@@ -58,17 +58,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NMu-Q6-FWh"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Carros" id="P3R-lJ-35L">
-                        <barButtonItem key="rightBarButtonItem" image="Cart" id="dR0-dU-hO3">
-                            <connections>
-                                <segue destination="UVG-89-0U3" kind="show" identifier="segueCart" id="P9R-Cj-bXv"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Carros" id="P3R-lJ-35L"/>
                     <connections>
                         <outlet property="activityIndicator" destination="E6l-Z6-Kxp" id="uI1-Je-Y6B"/>
                         <outlet property="tableViewCar" destination="0XU-FQ-sTL" id="g3b-Mg-oZH"/>
                         <segue destination="hkp-KH-LqD" kind="show" identifier="segueDetails" id="a1j-I2-3XI"/>
+                        <segue destination="UVG-89-0U3" kind="show" identifier="segueCart" id="Lfk-Rt-ALr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BBf-pg-0JF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -214,13 +209,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wWp-0p-oHn"/>
                     </view>
-                    <navigationItem key="navigationItem" id="gCU-Dn-zRT">
-                        <barButtonItem key="rightBarButtonItem" image="Cart" id="gQD-Sj-j3S">
-                            <connections>
-                                <segue destination="UVG-89-0U3" kind="show" identifier="segueCart" id="2MQ-wM-Tc6"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="gCU-Dn-zRT"/>
                     <connections>
                         <outlet property="activityIndicator" destination="m23-bf-rGu" id="TSV-FJ-gUf"/>
                         <outlet property="buttonAdd" destination="4mH-TV-78z" id="HdF-dO-Jiw"/>
@@ -230,6 +219,7 @@
                         <outlet property="labelPrice" destination="LhI-ho-5az" id="cj3-ER-G8Y"/>
                         <outlet property="scrollCar" destination="iRH-ss-1Fm" id="gYw-DV-Yhd"/>
                         <outlet property="viewContainer" destination="SZu-d8-W1q" id="m7E-qQ-dGA"/>
+                        <segue destination="UVG-89-0U3" kind="show" identifier="segueCart" id="9QV-6Y-AYt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aq8-08-4qG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -237,10 +227,7 @@
             <point key="canvasLocation" x="1488.8" y="534.78260869565224"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Cart" width="32" height="32"/>
-    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="2MQ-wM-Tc6"/>
+        <segue reference="9QV-6Y-AYt"/>
     </inferredMetricsTieBreakers>
 </document>
