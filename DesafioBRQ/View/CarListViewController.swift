@@ -37,17 +37,15 @@ class CarListViewController: UIViewController
             {
                 let vc = segue.destination as! CarDetailsViewController
                 let car = arrayCars[indexPath.row]
-                vc.arrayCars = arrayCars
                 vc.carId = car.id
             }
         }
-        else if  (segue.identifier == "segueCart")
-        {
-            let vc = segue.destination as! CartViewController
-            
-            //TODO: Apagar esse array, será salvo localmente
-            vc.arrayCars = arrayCars
-        }
+    }
+    
+    @objc func addItem(_ sender: Any)
+    {
+        let index = (sender as AnyObject).tag!
+        carListPresenter.addToCart(car: arrayCars[index])
     }
 }
 
@@ -108,6 +106,9 @@ extension CarListViewController: UITableViewDataSource
         let placeholderImage = UIImage(named: "Placeholder")!
         cell.imageViewCar.af_setImage(withURL: url, placeholderImage: placeholderImage)
         
+        cell.buttonBuy.tag = indexPath.row
+        cell.buttonBuy.addTarget(self, action: #selector(addItem(_:)), for: .touchUpInside)
+                
         return cell
     }
 }

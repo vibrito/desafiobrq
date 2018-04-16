@@ -44,4 +44,19 @@ class CarDetailsPresenter
             }
         }
     }
+    
+    func addToCart(car: Car)
+    {
+        let item = CartItem()
+        item.name = car.nome!
+        item.id = car.id!
+        item.createdAt = NSDate()
+        item.brand = car.marca!
+        item.image = car.imagem!
+        item.price = car.preco!
+        item.quantity = 1
+        print("name of car: \(item.name)")
+        
+        DBManager.sharedInstance.addItem(object: item)
+    }
 }

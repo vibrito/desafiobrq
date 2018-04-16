@@ -7,12 +7,13 @@
 //
 
 import Foundation
+import RealmSwift
 
 protocol CartView: NSObjectProtocol
 {
     func startLoading()
-    func setList()
-    func removeProduct(id: String)
+    func setList(array: Results<CartItem>!)
+    func removeProduct(id: Int)
     func removeAllProducts()
     func showError()
     func checkout()

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class CarDetailsViewController: UIViewController
 {
@@ -21,7 +22,6 @@ class CarDetailsViewController: UIViewController
     
     var car: Car?
     var carId: Int?
-    var arrayCars: [Car] = []
     
     private let carDetailsPresenter = CarDetailsPresenter(carService: CarService())
     
@@ -33,15 +33,9 @@ class CarDetailsViewController: UIViewController
         carDetailsPresenter.getCar(id: carId!)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    @IBAction func addToCart(_ sender: Any)
     {
-        if  (segue.identifier == "segueCart")
-        {
-            let vc = segue.destination as! CartViewController
-            
-            //TODO: Apagar esse array, será salvo localmente
-            vc.arrayCars = arrayCars
-        }
+        carDetailsPresenter.addToCart(car: car!)
     }
 }
 
@@ -60,7 +54,7 @@ extension CarDetailsViewController: CarDetaislView
     
     func showError()
     {
-        self.viewContainer.isHidden = false
+        self.viewContainer.isHidden = true
     }
     
     func setCar(car: Car)

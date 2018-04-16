@@ -29,6 +29,15 @@ class CartPresenter
     
     func getCartList()
     {
-        self.cartView?.setList()
+        self.cartView?.setList(array: DBManager.sharedInstance.getCartItens())
+    }
+    
+    func removeItem(item: CartItem)
+    {
+        DBManager.sharedInstance.deleteItem(object: item)
+        self.cartView?.setList(array: DBManager.sharedInstance.getCartItens())
+
+        //TODO: Usar esse método
+        //self.cartView?.removeProduct(id: item.id)
     }
 }

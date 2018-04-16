@@ -151,6 +151,9 @@
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="158" id="T87-60-S1l"/>
                                                 </constraints>
                                                 <state key="normal" title="Adicionar ao carrinho"/>
+                                                <connections>
+                                                    <action selector="addToCart:" destination="hkp-KH-LqD" eventType="touchUpInside" id="daC-rc-0FV"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LhI-ho-5az">
                                                 <rect key="frame" x="32" y="366" width="90" height="17"/>
