@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -78,7 +79,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fOi-2C-YEt">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fOi-2C-YEt">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
@@ -174,15 +175,16 @@
                                             <constraint firstItem="88w-Eb-v0g" firstAttribute="top" secondItem="kqY-mx-jaM" secondAttribute="bottom" constant="37" id="Bej-nj-rEK"/>
                                             <constraint firstItem="4mH-TV-78z" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="LhI-ho-5az" secondAttribute="trailing" constant="20" id="DJd-EV-U4Z"/>
                                             <constraint firstItem="88w-Eb-v0g" firstAttribute="leading" secondItem="SZu-d8-W1q" secondAttribute="leading" constant="32" id="EoW-6U-VhQ"/>
+                                            <constraint firstItem="kqY-mx-jaM" firstAttribute="top" secondItem="SZu-d8-W1q" secondAttribute="topMargin" constant="19" id="GIB-oF-rhC"/>
                                             <constraint firstItem="664-Iw-XRB" firstAttribute="top" secondItem="kqY-mx-jaM" secondAttribute="bottom" constant="8" id="GKC-EG-8WK"/>
                                             <constraint firstItem="kzm-5q-XGo" firstAttribute="leading" secondItem="SZu-d8-W1q" secondAttribute="leading" constant="32" id="HPN-a8-skK"/>
                                             <constraint firstItem="kzm-5q-XGo" firstAttribute="top" secondItem="88w-Eb-v0g" secondAttribute="bottom" constant="8" id="LEw-VE-3ey"/>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="4mH-TV-78z" secondAttribute="bottom" constant="20" id="NGA-Ff-nec"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="kzm-5q-XGo" secondAttribute="trailing" constant="31" id="Tft-UW-MHY"/>
                                             <constraint firstItem="664-Iw-XRB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="SZu-d8-W1q" secondAttribute="leading" constant="32" id="UgE-I3-TbV"/>
                                             <constraint firstAttribute="trailing" secondItem="4mH-TV-78z" secondAttribute="trailing" constant="31" id="b4X-aK-inR"/>
                                             <constraint firstItem="LhI-ho-5az" firstAttribute="top" secondItem="kzm-5q-XGo" secondAttribute="bottom" constant="14.5" id="fnR-0Q-xWN"/>
                                             <constraint firstItem="LhI-ho-5az" firstAttribute="leading" secondItem="SZu-d8-W1q" secondAttribute="leading" constant="32" id="loM-YC-M1s"/>
-                                            <constraint firstItem="kqY-mx-jaM" firstAttribute="top" secondItem="SZu-d8-W1q" secondAttribute="top" constant="91" id="tz6-iQ-O7q"/>
                                             <constraint firstItem="kqY-mx-jaM" firstAttribute="leading" secondItem="SZu-d8-W1q" secondAttribute="leading" constant="32" id="wTT-VF-C9P"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="88w-Eb-v0g" secondAttribute="trailing" constant="31" id="zYE-yw-Gds"/>
                                         </constraints>
@@ -228,6 +230,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="9QV-6Y-AYt"/>
+        <segue reference="Lfk-Rt-ALr"/>
     </inferredMetricsTieBreakers>
 </document>

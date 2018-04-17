@@ -34,7 +34,7 @@ class CarDetailsPresenter
         let carId = String(id)
         
         carService.getCar(carId: carId) { (car) in
-            if ((car) != nil)
+            if (car?.id != nil)
             {
                 self.carDetailsView?.setCar(car: car!)
             }
