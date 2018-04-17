@@ -25,6 +25,18 @@ class DBManager
         return results
     }
     
+    func getTotalValue() -> Double
+    {
+        var double: Double = 0.0
+        let results = database.objects(CartItem.self).filter("quantity > 0") 
+        for item in results
+        {
+           double = double + item.price
+        }
+        
+        return double
+    }
+    
     func addItem(object: CartItem)
     {
         try! database.write

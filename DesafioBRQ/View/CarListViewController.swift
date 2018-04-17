@@ -33,9 +33,10 @@ class CarListViewController: UIViewController
         carListPresenter.getCars()
     }
     
-    override func viewDidAppear(_ animated: Bool)
+    override func viewWillAppear(_ animated: Bool)
     {
-        super.viewDidAppear(animated)
+        super.viewWillAppear(animated)
+        barButtonCart.badgeText = nil
         carListPresenter.getBadgeNumber()
     }
     
@@ -77,10 +78,13 @@ extension CarListViewController: CarListView
         activityIndicator.stopAnimating()
     }
     
-    func showError()
+    func showError(message: String)
     {
         activityIndicator.stopAnimating()
-        self.tableViewCar.isHidden = true
+        
+        let alert = UIAlertController(title: "Alerta", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     func setList(cars: [Car])
@@ -90,7 +94,7 @@ extension CarListViewController: CarListView
         self.tableViewCar.reloadData()
     }
     
-    func setBadge(badgeNumber: String)
+    func setBadge(badgeNumber: String?)
     {
         barButtonCart.badgeText = badgeNumber
     }

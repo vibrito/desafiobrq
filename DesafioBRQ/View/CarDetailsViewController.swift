@@ -37,10 +37,16 @@ class CarDetailsViewController: UIViewController
         navigationItem.rightBarButtonItem = barButtonCart
     }
     
+    override func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        barButtonCart.badgeText = nil
+        carDetailsPresenter.getBadgeNumber()
+    }
+    
     override func viewDidAppear(_ animated: Bool)
     {
         super.viewDidAppear(animated)
-        carDetailsPresenter.getBadgeNumber()
     }
     
     @IBAction func addToCart(_ sender: Any)
@@ -67,9 +73,11 @@ extension CarDetailsViewController: CarDetaislView
         activityIndicator.stopAnimating()
     }
     
-    func showError()
+    func showError(message: String)
     {
-        self.viewContainer.isHidden = true
+        let alert = UIAlertController(title: "Alerta", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     func setCar(car: Car)
@@ -88,8 +96,8 @@ extension CarDetailsViewController: CarDetaislView
         self.viewContainer.isHidden = false
     }
     
-    func setBadge(badgeNumber: String)
-    {
+    func setBadge(badgeNumber: String?)
+    {        
         barButtonCart.badgeText = badgeNumber
     }
 }

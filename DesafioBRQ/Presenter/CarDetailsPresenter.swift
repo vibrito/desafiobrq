@@ -40,7 +40,7 @@ class CarDetailsPresenter
             }
             else
             {
-                self.carDetailsView?.showError()
+                self.carDetailsView?.showError(message: "Erro na obtenção dos dados")
             }
         }
     }
@@ -57,13 +57,29 @@ class CarDetailsPresenter
         item.quantity = 1
         print("name of car: \(item.name)")
         
-        DBManager.sharedInstance.addItem(object: item)
+        let newTotal = DBManager.sharedInstance.getTotalValue() + item.price
+        if (newTotal > 100000.00)
+        {
+            self.carDetailsView?.showError(message: "Seu carrinho não pode conter mais de R$ 100000,00. Finalize sua compra ou retire itens do seu carrinho.")
+        }
+        else
+        {
+            DBManager.sharedInstance.addItem(object: item)
+        }
         
         getBadgeNumber()
     }
     
     func getBadgeNumber()
     {
-        self.carDetailsView?.setBadge(badgeNumber: String(DBManager.sharedInstance.getCartItens().count))
+        let badgeNumber = String(DBManager.sharedInstance.getCartItens().count)
+        
+        if  badgeNumber == "0"
+        {
+            self.carDetailsView?.setBadge(badgeNumber: nil)
+            return
+        }
+        
+        self.carDetailsView?.setBadge(badgeNumber: badgeNumber)
     }
 }

@@ -12,7 +12,7 @@ protocol CarListView: NSObjectProtocol
 {
     func startLoading()
     func finishLoading()
-    func showError()
+    func showError(message: String)
     func setList(cars: [Car])
-    func setBadge(badgeNumber: String)
+    func setBadge(badgeNumber: String?)
 }

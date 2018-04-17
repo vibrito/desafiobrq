@@ -78,17 +78,17 @@ public extension BadgeBarButtonItem {
         button.sizeToFit()
         button.addSubview(badgeLabel)
         
-        button.addConstraint(
-            NSLayoutConstraint(
-                item: badgeLabel,
-                attribute: button.currentTitle?.isEmpty == false ? .top : .centerY,
-                relatedBy: .equal,
-                toItem: button,
-                attribute: .top,
-                multiplier: 1,
-                constant: 0
-            )
-        )
+//        button.addConstraint(
+//            NSLayoutConstraint(
+//                item: badgeLabel,
+//                attribute: button.currentTitle?.isEmpty == false ? .top : .centerY,
+//                relatedBy: .equal,
+//                toItem: button,
+//                attribute: .top,
+//                multiplier: 1,
+//                constant: 0
+//            )
+//        )
         
         button.addConstraint(
             NSLayoutConstraint(
