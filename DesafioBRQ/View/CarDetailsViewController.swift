@@ -82,6 +82,17 @@ extension CarDetailsViewController: CarDetaislView
         self.present(alert, animated: true, completion: nil)
     }
     
+    func showErrorAndDismiss(message: String)
+    {
+        activityIndicator.stopAnimating()
+        
+        let alert = UIAlertController(title: "Alerta", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler:{ _ in
+            self.navigationController?.popViewController(animated: true)
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     func setCar(car: Car)
     {
         self.car = car

@@ -40,7 +40,7 @@ class CarDetailsPresenter
             }
             else
             {
-                self.carDetailsView?.showError(message: "Erro na obtenção dos dados")
+                self.carDetailsView?.showErrorAndDismiss(message: "Erro na obtenção dos dados, tente novamente mais tarde.")
             }
         }
     }

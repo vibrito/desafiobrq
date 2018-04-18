@@ -15,6 +15,7 @@ protocol CartView: NSObjectProtocol
     func setList(array: Results<CartItem>!)
     func removeProduct(id: Int)
     func removeAllProducts()
-    func showError()
+    func showError(message: String)
+    func showErrorAndDismiss(message: String)
     func checkout()
 }
