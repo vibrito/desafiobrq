@@ -78,33 +78,78 @@ extension CartViewController: CartView
     }
 }
 
+extension CartViewController: UITableViewDelegate
+{
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    {
+        if  (indexPath.section == 0)
+        {
+            return 100
+        }
+        
+        return 60
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        print("Finalizar compra")
+    }
+}
+
 extension CartViewController: UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return arrayCartItens.count
+        if (section == 0)
+        {
+            return arrayCartItens.count
+        }
+        else
+        {
+            if (arrayCartItens.count > 0)
+            {
+                return 1
+            }
+            
+            return 0
+        }
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int
+    {
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "mainCell", for: indexPath) as! CarCell
-        
-        let item = arrayCartItens[indexPath.row]
-        cell.selectionStyle = .none
-
-        cell.labelTitle?.text = item.name
-        cell.labelBrand?.text = item.brand
-        let doubleStr = String(format: "%.2f", item.price)
-        cell.labelPrice?.text = "R$ \(doubleStr)"
-
-        let url = URL(string: item.image)!
-        let placeholderImage = UIImage(named: "Placeholder")!
-        cell.imageViewCar.af_setImage(withURL: url, placeholderImage: placeholderImage)
-        
-        cell.buttonBuy.setTitle("Remover do carrinho", for: .normal)
-        cell.buttonBuy.tag = indexPath.row
-        cell.buttonBuy.addTarget(self, action: #selector(removeItem(_:)), for: .touchUpInside)
-        
-        return cell
+        if (indexPath.section == 0)
+        {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "mainCell", for: indexPath) as! CarCell
+            
+            let item = arrayCartItens[indexPath.row]
+            cell.selectionStyle = .none
+            
+            cell.labelTitle?.text = item.name
+            cell.labelBrand?.text = item.brand
+            let doubleStr = String(format: "%.2f", item.price)
+            cell.labelPrice?.text = "R$ \(doubleStr)"
+            
+            let url = URL(string: item.image)!
+            let placeholderImage = UIImage(named: "Placeholder")!
+            cell.imageViewCar.af_setImage(withURL: url, placeholderImage: placeholderImage)
+            
+            cell.buttonBuy.setTitle("Remover do carrinho", for: .normal)
+            cell.buttonBuy.tag = indexPath.row
+            cell.buttonBuy.addTarget(self, action: #selector(removeItem(_:)), for: .touchUpInside)
+            
+            return cell
+        }
+        else
+        {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+            cell.selectionStyle = .none
+            cell.textLabel?.text = "Finalizar compra"
+            return cell
+        }
     }
 }
