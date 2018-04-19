@@ -31,17 +31,25 @@ class CarDetailsPresenter
     func getCar(id: Int)
     {
         self.carDetailsView?.startLoading()
-        let carId = String(id)
         
-        carService.getCar(carId: carId) { (car) in
-            if (car?.id != nil)
-            {
-                self.carDetailsView?.setCar(car: car!)
+        if Reachability.isConnectedToNetwork()
+        {
+            let carId = String(id)
+            
+            carService.getCar(carId: carId) { (car) in
+                if (car?.id != nil)
+                {
+                    self.carDetailsView?.setCar(car: car!)
+                }
+                else
+                {
+                    self.carDetailsView?.showErrorAndDismiss(message: "Erro na obtenção dos dados, tente novamente mais tarde.")
+                }
             }
-            else
-            {
-                self.carDetailsView?.showErrorAndDismiss(message: "Erro na obtenção dos dados, tente novamente mais tarde.")
-            }
+        }
+        else
+        {
+            self.carDetailsView?.showErrorAndDismiss(message: "Sem acesso a internet, reconecte e tente novamente.")
         }
     }
     

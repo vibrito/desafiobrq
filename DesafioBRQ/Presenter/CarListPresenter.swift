@@ -31,16 +31,24 @@ class CarListPresenter
     func getCars()
     {
         self.carListView?.startLoading()
-        carService.getCars { [weak self] arrayCars in
-            self?.carListView?.finishLoading()
-            if ((arrayCars) != nil)
-            {
-                self?.carListView?.setList(cars: arrayCars!)
+
+        if Reachability.isConnectedToNetwork()
+        {
+            carService.getCars { [weak self] arrayCars in
+                self?.carListView?.finishLoading()
+                if ((arrayCars) != nil)
+                {
+                    self?.carListView?.setList(cars: arrayCars!)
+                }
+                else
+                {
+                    self?.carListView?.showError(message: "Erro na obtenção dos dados.")
+                }
             }
-            else
-            {
-                self?.carListView?.showError(message: "Erro na obtenção dos dados")
-            }
+        }
+        else
+        {
+            self.carListView?.showError(message: "Sem acesso a internet, reconecte e tente novamente.")
         }
     }
     

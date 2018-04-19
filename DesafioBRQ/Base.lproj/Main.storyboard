@@ -36,7 +36,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0XU-FQ-sTL">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EcH-CI-2tr">
+                                <rect key="frame" x="125" y="319" width="124" height="30"/>
+                                <state key="normal" title="Tentar novamente"/>
+                                <connections>
+                                    <action selector="reload:" destination="HVd-mL-q0S" eventType="touchUpInside" id="KRL-G5-hw3"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0XU-FQ-sTL">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
@@ -52,7 +59,9 @@
                         <constraints>
                             <constraint firstItem="0XU-FQ-sTL" firstAttribute="bottom" secondItem="NMu-Q6-FWh" secondAttribute="bottom" id="0KK-pD-JJh"/>
                             <constraint firstItem="E6l-Z6-Kxp" firstAttribute="centerY" secondItem="0XU-FQ-sTL" secondAttribute="centerY" id="3GF-WI-8WN"/>
+                            <constraint firstItem="EcH-CI-2tr" firstAttribute="centerY" secondItem="0XU-FQ-sTL" secondAttribute="centerY" id="6nm-sk-fNG"/>
                             <constraint firstItem="0XU-FQ-sTL" firstAttribute="trailing" secondItem="NMu-Q6-FWh" secondAttribute="trailing" id="HIU-bl-lrV"/>
+                            <constraint firstItem="EcH-CI-2tr" firstAttribute="centerX" secondItem="0XU-FQ-sTL" secondAttribute="centerX" id="gky-gC-lgs"/>
                             <constraint firstItem="0XU-FQ-sTL" firstAttribute="top" secondItem="k5X-4t-qPM" secondAttribute="top" id="jZ0-lr-nOG"/>
                             <constraint firstItem="E6l-Z6-Kxp" firstAttribute="centerX" secondItem="0XU-FQ-sTL" secondAttribute="centerX" id="lQ9-4h-sfR"/>
                             <constraint firstItem="0XU-FQ-sTL" firstAttribute="leading" secondItem="NMu-Q6-FWh" secondAttribute="leading" id="y5h-Nz-5SB"/>
@@ -62,6 +71,7 @@
                     <navigationItem key="navigationItem" title="Carros" id="P3R-lJ-35L"/>
                     <connections>
                         <outlet property="activityIndicator" destination="E6l-Z6-Kxp" id="uI1-Je-Y6B"/>
+                        <outlet property="buttonTry" destination="EcH-CI-2tr" id="hec-Ob-4og"/>
                         <outlet property="tableViewCar" destination="0XU-FQ-sTL" id="g3b-Mg-oZH"/>
                         <segue destination="hkp-KH-LqD" kind="show" identifier="segueDetails" id="a1j-I2-3XI"/>
                         <segue destination="UVG-89-0U3" kind="show" identifier="segueCart" id="Lfk-Rt-ALr"/>
@@ -230,6 +240,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="9QV-6Y-AYt"/>
+        <segue reference="Lfk-Rt-ALr"/>
     </inferredMetricsTieBreakers>
 </document>
