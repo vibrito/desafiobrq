@@ -17,5 +17,5 @@ protocol CartView: NSObjectProtocol
     func removeAllProducts()
     func showError(message: String)
     func showErrorAndDismiss(message: String)
-    func checkout()
+    func finishCheckout()
 }

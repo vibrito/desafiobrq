@@ -89,27 +89,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fOi-2C-YEt">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="YBV-fg-bVM">
+                                <rect key="frame" x="177" y="323" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="49" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fOi-2C-YEt">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="bcB-Sh-Ke8" rowHeight="100" style="IBUITableViewCellStyleDefault" id="Gag-QJ-Oof">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="bcB-Sh-Ke8" rowHeight="50" style="IBUITableViewCellStyleDefault" id="Gag-QJ-Oof">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Gag-QJ-Oof" id="xFG-NU-mhg">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Finalizar compra" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bcB-Sh-Ke8">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="99.5"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="FINALIZAR COMPRA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bcB-Sh-Ke8">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="49.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -121,13 +124,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="fOi-2C-YEt" firstAttribute="trailing" secondItem="dnn-mG-v5f" secondAttribute="trailing" id="Dge-4V-bMi"/>
+                            <constraint firstItem="YBV-fg-bVM" firstAttribute="centerY" secondItem="fOi-2C-YEt" secondAttribute="centerY" id="JBJ-dG-h3T"/>
                             <constraint firstItem="fOi-2C-YEt" firstAttribute="bottom" secondItem="dnn-mG-v5f" secondAttribute="bottom" id="RxF-7e-cbj"/>
                             <constraint firstItem="fOi-2C-YEt" firstAttribute="top" secondItem="SzZ-V4-wQ7" secondAttribute="top" id="gCr-ce-Ooq"/>
                             <constraint firstItem="fOi-2C-YEt" firstAttribute="leading" secondItem="dnn-mG-v5f" secondAttribute="leading" id="rV5-Ra-DI2"/>
+                            <constraint firstItem="YBV-fg-bVM" firstAttribute="centerX" secondItem="fOi-2C-YEt" secondAttribute="centerX" id="rnp-D2-TyD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dnn-mG-v5f"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="YBV-fg-bVM" id="UG2-42-3qV"/>
                         <outlet property="tableViewCart" destination="fOi-2C-YEt" id="JkQ-Ta-yLW"/>
                     </connections>
                 </viewController>
@@ -260,6 +266,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Lfk-Rt-ALr"/>
+        <segue reference="9QV-6Y-AYt"/>
     </inferredMetricsTieBreakers>
 </document>

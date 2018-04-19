@@ -32,8 +32,9 @@ class CarListViewController: UIViewController
         barButtonCart = BadgeBarButtonItem(image: "Cart", target: self, action: #selector(callCart))!
         navigationItem.rightBarButtonItem = barButtonCart
         tableViewCar.register(UINib(nibName: "CarCell", bundle: nil), forCellReuseIdentifier: "mainCell")
-        carListPresenter.attachView(view: self)        
+        tableViewCar.addSubview(self.refreshControl)
         
+        carListPresenter.attachView(view: self)
         carListPresenter.getCars()
     }
     
@@ -43,6 +44,12 @@ class CarListViewController: UIViewController
         barButtonCart.badgeText = nil
         carListPresenter.getBadgeNumber()
     }
+    
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(reload(_:)), for: UIControlEvents.valueChanged)
+        return refreshControl
+    }()
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
@@ -86,6 +93,7 @@ extension CarListViewController: CarListView
     func finishLoading()
     {
         activityIndicator.stopAnimating()
+        refreshControl.endRefreshing()
     }
     
     func showError(message: String)
@@ -102,7 +110,6 @@ extension CarListViewController: CarListView
     {
         arrayCars = cars
         arrayTableView = cars
-        arrayTableView.append(contentsOf: arrayCars)
         tableViewCar.isHidden = false
         tableViewCar.reloadData()
     }

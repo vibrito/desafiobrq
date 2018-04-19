@@ -38,9 +38,24 @@ class CartPresenter
         }
     }
     
+    func refresh()
+    {
+        
+    }
+    
     func removeItem(item: CartItem)
     {
         DBManager.sharedInstance.deleteItem(object: item)
         getCartList()
+    }
+    
+    func checkout()
+    {
+        self.cartView?.startLoading()
+        
+        let delayTime = DispatchTime.now() + Double(Int64(2 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+        DispatchQueue.main.asyncAfter(deadline: delayTime) {
+            self.cartView?.finishCheckout()
+        }
     }
 }

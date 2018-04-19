@@ -12,6 +12,7 @@ import RealmSwift
 class CartViewController: UIViewController
 {
     @IBOutlet weak var tableViewCart: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     private let cartPresenter = CartPresenter()
     var arrayCartItens : Results<CartItem>!
@@ -33,27 +34,28 @@ class CartViewController: UIViewController
 }
 
 extension CartViewController: CartView
-{    
+{
     func startLoading()
     {
+        self.activityIndicator.startAnimating()
         self.tableViewCart.isHidden = true
     }
     
     func setList(array: Results<CartItem>!)
     {
         arrayCartItens = array
+        self.activityIndicator.stopAnimating()
         self.tableViewCart.reloadData()
     }
     
     func removeProduct(id: Int)
     {
-        //TODO: Colocar animação de retirada de apenas uma célula
         self.tableViewCart.reloadData()
     }
     
     func removeAllProducts()
     {
-        
+        self.tableViewCart.reloadData()
     }
     
     func showError(message: String)
@@ -72,9 +74,11 @@ extension CartViewController: CartView
         self.present(alert, animated: true, completion: nil)
     }
     
-    func checkout()
+    func finishCheckout()
     {
-        
+        //TODO: Adicionar alerta e remover os dados do array do carrinho
+        self.activityIndicator.stopAnimating()
+        self.tableViewCart.isHidden = false
     }
 }
 
@@ -87,12 +91,12 @@ extension CartViewController: UITableViewDelegate
             return 100
         }
         
-        return 60
+        return 50
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        print("Finalizar compra")
+        cartPresenter.checkout()
     }
 }
 
@@ -148,7 +152,6 @@ extension CartViewController: UITableViewDataSource
         {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
             cell.selectionStyle = .none
-            cell.textLabel?.text = "Finalizar compra"
             return cell
         }
     }
