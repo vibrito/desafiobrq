@@ -21,6 +21,7 @@
 		BD336D21208286E5003021DC /* AlamofireObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD4C871820827EE800392A73 /* AlamofireObjectMapper.framework */; };
 		BD336D22208286E5003021DC /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD4C871520827EE800392A73 /* ObjectMapper.framework */; };
 		BD336D24208286E5003021DC /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD336D23208286E5003021DC /* SDWebImage.framework */; };
+		BD41CF0C20885B0200D718A2 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD41CF0B20885B0200D718A2 /* Reachability.swift */; };
 		BD4C87032082602500392A73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4C87022082602500392A73 /* AppDelegate.swift */; };
 		BD4C87052082602500392A73 /* CarListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4C87042082602500392A73 /* CarListViewController.swift */; };
 		BD4C87082082602500392A73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD4C87062082602500392A73 /* Main.storyboard */; };
@@ -47,6 +48,7 @@
 		BD1FE9DA20839EE2007A083E /* CarDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailsView.swift; sourceTree = "<group>"; };
 		BD1FE9DC2083DBE7007A083E /* CarDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailsPresenter.swift; sourceTree = "<group>"; };
 		BD336D23208286E5003021DC /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
+		BD41CF0B20885B0200D718A2 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		BD4C86FF2082602500392A73 /* DesafioBRQ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesafioBRQ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD4C87022082602500392A73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD4C87042082602500392A73 /* CarListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListViewController.swift; sourceTree = "<group>"; };
@@ -122,7 +124,6 @@
 			isa = PBXGroup;
 			children = (
 				BD1FE9CC2082B443007A083E /* CarService.swift */,
-				D3BFD8A22085421A00775EF5 /* DBManager.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -134,6 +135,16 @@
 				BD1FE9D520830D21007A083E /* CarCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		BD41CF0A20885ADB00D718A2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D3BFD8A22085421A00775EF5 /* DBManager.swift */,
+				BD41CF0B20885B0200D718A2 /* Reachability.swift */,
+				D3BFD8A520855A7500775EF5 /* BadgeBarButtonItem.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		BD4C86F62082602500392A73 = {
@@ -156,7 +167,7 @@
 		BD4C87012082602500392A73 /* DesafioBRQ */ = {
 			isa = PBXGroup;
 			children = (
-				D3BFD8A420855A5000775EF5 /* Badge */,
+				BD41CF0A20885ADB00D718A2 /* Helpers */,
 				BD1FE9D220830ADD007A083E /* Cells */,
 				BD1FE9CB2082B2BB007A083E /* Service */,
 				BD1FE9C62082A9D5007A083E /* Model */,
@@ -183,14 +194,6 @@
 				BD4C871520827EE800392A73 /* ObjectMapper.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D3BFD8A420855A5000775EF5 /* Badge */ = {
-			isa = PBXGroup;
-			children = (
-				D3BFD8A520855A7500775EF5 /* BadgeBarButtonItem.swift */,
-			);
-			path = Badge;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,6 +305,7 @@
 				BD4C87032082602500392A73 /* AppDelegate.swift in Sources */,
 				BDA72C8B208467C800EAA8E9 /* CartPresenter.swift in Sources */,
 				BDA72C892084676D00EAA8E9 /* CartViewController.swift in Sources */,
+				BD41CF0C20885B0200D718A2 /* Reachability.swift in Sources */,
 				D3BFD8A620855A7500775EF5 /* BadgeBarButtonItem.swift in Sources */,
 				D3BFD8A12085313D00775EF5 /* CartItem.swift in Sources */,
 				BD1FE9CF2082B7F4007A083E /* CarListView.swift in Sources */,
