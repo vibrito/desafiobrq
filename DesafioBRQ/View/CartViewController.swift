@@ -45,6 +45,7 @@ extension CartViewController: CartView
     {
         arrayCartItens = array
         self.activityIndicator.stopAnimating()
+        self.tableViewCart.isHidden = false
         self.tableViewCart.reloadData()
     }
     
@@ -58,27 +59,34 @@ extension CartViewController: CartView
         self.tableViewCart.reloadData()
     }
     
-    func showError(message: String)
+    func checkout()
     {
-        let alert = UIAlertController(title: "Alerta", message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-    }
-    
-    func showErrorAndDismiss(message: String)
-    {
-        let alert = UIAlertController(title: "Alerta", message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler:{ _ in
-            self.navigationController?.popViewController(animated: true)
-        }))
-        self.present(alert, animated: true, completion: nil)
+        UIApplication.shared.beginIgnoringInteractionEvents()
+        cartPresenter.checkout()
     }
     
     func finishCheckout()
     {
-        //TODO: Adicionar alerta e remover os dados do array do carrinho
+        UIApplication.shared.endIgnoringInteractionEvents()
         self.activityIndicator.stopAnimating()
-        self.tableViewCart.isHidden = false
+    }
+    
+    func showAlert(title: String?, message: String, dismiss: Bool)
+    {
+        var stringTitle = title
+        if stringTitle == nil
+        {
+            stringTitle = "Alerta"
+        }
+        
+        let alert = UIAlertController(title: stringTitle, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler:{ _ in
+            if  (dismiss)
+            {
+                self.navigationController?.popViewController(animated: true)
+            }
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
@@ -96,7 +104,7 @@ extension CartViewController: UITableViewDelegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        cartPresenter.checkout()
+        checkout()
     }
 }
 

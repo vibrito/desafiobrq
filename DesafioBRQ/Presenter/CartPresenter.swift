@@ -29,20 +29,17 @@ class CartPresenter
     
     func getCartList()
     {
+        self.cartView?.startLoading()
+        
         let results = DBManager.sharedInstance.getCartItens()
         self.cartView?.setList(array: results)
         
         if results.count == 0
         {
-            self.cartView?.showErrorAndDismiss(message: "Seu carrinho está vazio.")
+            self.cartView?.showAlert(title: nil, message: "Seu carrinho está vazio.", dismiss: true)
         }
     }
-    
-    func refresh()
-    {
         
-    }
-    
     func removeItem(item: CartItem)
     {
         DBManager.sharedInstance.deleteItem(object: item)
@@ -53,8 +50,9 @@ class CartPresenter
     {
         self.cartView?.startLoading()
         
-        let delayTime = DispatchTime.now() + Double(Int64(2 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
-        DispatchQueue.main.asyncAfter(deadline: delayTime) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            DBManager.sharedInstance.deleteAllItens()
+            self.cartView?.showAlert(title: "Sucesso", message: "Compra efetuada com sucesso!", dismiss: true)
             self.cartView?.finishCheckout()
         }
     }

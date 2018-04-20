@@ -94,8 +94,8 @@
 				BD1FE9C92082AA92007A083E /* Car.swift */,
 				BD1FE9CE2082B7F4007A083E /* CarListView.swift */,
 				BD1FE9DA20839EE2007A083E /* CarDetailsView.swift */,
-				BDA72C86208466E200EAA8E9 /* CartView.swift */,
 				D3BFD8A02085313D00775EF5 /* CartItem.swift */,
+				BDA72C86208466E200EAA8E9 /* CartView.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";

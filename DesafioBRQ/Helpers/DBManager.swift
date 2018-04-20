@@ -11,7 +11,7 @@ import RealmSwift
 
 class DBManager
 {
-    private var   database:Realm
+    private var  database:Realm
     static let   sharedInstance = DBManager()
 
     private init()
@@ -58,7 +58,13 @@ class DBManager
     {
         try!   database.write
         {
-            database.deleteAll()
+            let results = database.objects(CartItem.self).filter("quantity > 0")
+            
+            for object in results
+            {
+                object.quantity = 0
+                database.add(object, update: true)
+            }
         }
     }
 }
